@@ -8,7 +8,7 @@ library(data.table)
 library(stlplus)
 library(mgcv)
 
-source("paperPP_functions.R")
+source("auxiliar_functions.R")
 
 # Input file names
 seawifsFile = "input/vgpm.s.peru.1997-2009.nc4"
