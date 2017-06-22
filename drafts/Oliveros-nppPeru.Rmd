@@ -1,0 +1,32 @@
+---
+title: Reconstruction of satellite-based primary productivity using spatio-temporal
+  patterns
+author:
+  affiliation: Universidad Peruana Cayetano Heredia
+  name: Ricardo Oliveros-Ramos
+fontfamily: mathpazo
+output:
+  word_document: default
+  pdf_document:
+    fig_caption: yes
+    keep_tex: yes
+    latex_engine: pdflatex
+    template: svm-latex-ms.tex
+geometry: margin=2.5cm
+keywords: primary production, GAM, mgcv
+fontsize: 11pt
+subtitle: Application to the Peruvian upwelling ecosystem
+abstract: We made a reconstruction of the net primary production (NPP) off Peru for
+  the period 1997-2017 by modelling the relationship between seaWIFS and MODIS NPP
+  estimates. We used GAM models.
+---
+
+## Introduction
+
+## Methods
+
+## Results and discussion
+
+## Conclusions
+
+## Bibliography
