@@ -62,7 +62,11 @@ explDev = function(..., k=2) {
   df = sapply(ll, attr, which="df")
   ll = unlist(ll)
   dev = sapply(mods, FUN=.explDev)
-  out = data.frame(df = df, AIC = -2 * ll + k * df, expDev=dev)
+  npar = sapply(mods, FUN=function(x) length(coef(x)))
+  n = sapply(mods, FUN=function(x) length(x$fitted.values))
+  MSE = sapply(mods, FUN=function(x) mean(x$residuals^2, na.rm=TRUE))
+  out = data.frame(df = df, par=npar, n=n, MSE=MSE, 
+                   AIC = -2 * ll + k * df, expDev=dev)
   rownames(out) = modNames
   return(out)
 }
@@ -73,3 +77,11 @@ check4 = function(model, pch=".") {
   return(invisible())
 }
 
+
+trimGAM = function(x) {
+  x$prior.weights = NULL
+  x$offset = NULL
+  x$weights = NULL
+  x$linear.predictors = NULL
+  return(x)
+}
